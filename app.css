@@ -1,0 +1,180 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+  
+  header img {
+    height: 50px;
+    margin-left: 20px;
+  }
+  
+  header nav {
+    margin-right: 20px;
+  }
+  
+  header nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    margin-right: 20px;
+  }
+  
+  header nav a {
+    color: #fff;
+    text-decoration: none;
+  }
+  #hero-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    text-align: center;
+    background-image: url(herobanner.webp);
+    background-size: cover;
+    background-position: center;
+  }
+  #hero-banner button {
+    position: absolute;
+    object-fit: cover;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 10px 20px;
+  }  
+  main {
+    padding: 20px;
+  }
+   #featured-properties {
+    text-align: center;
+    padding: 60px 0;
+    position: relative;
+  }
+  
+  #featured-properties h2 {
+    margin-bottom: 40px;
+  }
+
+  .property-slider {
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    margin: 40px 0;
+  }
+  
+  .property-slide.active {
+    display: block;
+  }
+  
+  .property-slide {
+    width: 100%;
+    height: 400px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: all 0.5s;
+
+  }
+  
+  .property-slide:first-child {
+    opacity: 1;
+  }
+  
+  .property-slide img { 
+    width: 100%;
+    height: 60%;
+    object-fit: scale-down;
+    position: static;
+
+  }
+  
+  .property-slide h3 {
+    position: static;
+    bottom: 20px;
+    left: 20px;
+    color: black;
+    font-size: 20px;
+  }
+  
+  .property-slide p {
+    position: static;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    color: black;
+    font-size: 14px;
+    transition: all 0.5s;
+  }
+  
+  .property-slide a {
+    position: sticky;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    transition: all 0.5s;
+  }
+  
+  .property-slide a:hover {
+    background-color: white;
+    color: black;
+  }
+  
+  .slider-controls {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 100%;
+  }
+  
+  .slider-controls .prev,
+  .slider-controls .next {
+    width: 50px;
+    height: 50px;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    transform: translateY(-50%);
+  }
+  
+  .slider-controls .prev {
+    left: 20px;
+  }
+  
+  .slider-controls .next {
+    right: 20px;
+  }
+  
+      
+  footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+  }
+  

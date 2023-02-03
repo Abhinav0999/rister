@@ -1,5 +1,6 @@
 const propertySlider = document.querySelector('.property-slider');
-const slides = propertySlider.querySelectorAll('.property-slide');
+if(propertySlider){
+  const slides = propertySlider.querySelectorAll('.property-slide');
 const prevBtn = document.querySelector(".prev");
 const nextBtn = document.querySelector(".next");
 
@@ -25,13 +26,24 @@ nextBtn.addEventListener("click", nextSlide);
 prevBtn.addEventListener("click", prevSlide);
 
 showSlide(slideIndex);
+}
+else
+{
+  console.error('Element with selector "${.property-slider}" not found');
+}
+
 
 const viewListingBtn = document.querySelector(".view-listing-btn");
 
-
-viewListingBtn.addEventListener("click", function() {
-  window.location.href = "properties.html";
-});
+if(viewListingBtn){
+  viewListingBtn.addEventListener("click", function() {
+    window.location.href = "properties.html";
+   });   
+}
+else
+{
+  console.error('Element with selector "${.view-listing-btn}" not found');
+}
 
 const logonav = document.querySelector(".logomain");
 
@@ -39,3 +51,22 @@ const logonav = document.querySelector(".logomain");
 logonav.addEventListener("click", function() {
   window.location.href = "index.html";
 });
+
+const propertyList = document.querySelector(".property-list");
+
+fetch("listdata.json")
+  .then(response => response.json())
+  .then(data => {
+    let propertyHTML = "";
+    data.properties.forEach(property => {
+      propertyHTML += `
+        <li>
+          <h2>${property.name}</h2>
+          <img src="${property.image}" alt="${property.name}">
+          <p>${property.description}</p>
+          <button>${property.button}</button>
+        </li>
+      `;
+    });
+    propertyList.innerHTML = propertyHTML;
+  });
